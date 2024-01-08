@@ -1,0 +1,14 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+    margin: 0; /* Remove default body margin */
+    padding: 20px;
+    background-image: url('./assets/1.jpg'); /* Set the path to your background image */
+    background-size: cover; /* Ensure the background image covers the entire page */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    background-attachment: fixed; /* Fixed background position when scrolling */
+    color: #333; /* Set text color to be visible against the background */
+  }
+  

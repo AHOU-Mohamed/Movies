@@ -1,0 +1,51 @@
+/* Custom styles for the card */
+.card {
+  width: 18rem; /* Adjust the width as needed */
+  height: auto; /* Adjust the height as needed */
+  background-color: #f0f0f0; /* Change the background color */
+  margin: 0; /* Remove margins */
+  padding: 15px; /* Add padding as needed */
+}
+
+.card-img-top {
+  height: 300px; /* Adjust the image height as needed */
+  object-fit: cover;
+}
+
+/* Global styles for the entire page */
+/* Global styles for the entire page */
+.navbar-container {
+  margin-left: 0; 
+  margin-right: 20;/* Remove all left margin */
+  margin-bottom: 40px; /* Adjust the top margin as needed */
+  max-width: 70%; /* Set the maximum width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Set a higher z-index value */
+  padding-top: 0px; /* Adjust the top padding as needed */
+  
+}
+
+.bg-black {
+  background-color: rgb(20, 4, 42) !important;
+}
+/* Custom styles for the search and dropdown buttons */
+.btn.btn-outline-light,
+.form-select {
+  background-color: purple !important;
+  color: #fff !important;
+  transition: background-color 0.3s;
+}
+
+.btn.btn-outline-light:hover,
+
+.form-select:hover {
+  background-color: #8c1aff !important; /* Darker purple on hover */
+}
+
+.navbar {
+  height: 50px; /* Set your desired height */
+}

@@ -1,0 +1,30 @@
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ff00bf;
+  }
+  
+  .active .nav-link {
+    color: #ff00bf !important;
+    font-weight: bold;
+  }
+  
+
+  
+  .emi-movies {
+    color: #ff0000;
+    font-weight: bold;
+  }
+
+  .navbar-brand {
+    font-size: 2rem; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: #ff00bf; /* Change to your desired color */
+    text-shadow: 0 0 3px rgba(255, 0, 191, 0.3), 0 0 6px rgba(255, 0, 191, 0.3), 0 0 9px rgba(255, 0, 191, 0.3);
+  }
+  .navbar-nav {
+    margin-left: auto; /* Align items to the right */
+  }
+  
+  .nav-link {
+    font-size: 1.2rem; /* Adjust the font size as needed */
+  }
+  
