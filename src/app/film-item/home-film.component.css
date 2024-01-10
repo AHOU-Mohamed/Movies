@@ -1,0 +1,89 @@
+/* Global styles for the entire page */
+body {
+  padding: 20px;
+  
+}
+
+/* Custom styles for the card component */
+.card {
+  width: 15rem; /* Adjust the width as needed */
+  height: 400px; /* Adjust the height as needed */
+}
+
+.card-img-top {
+  height: 200px; /* Adjust the image height as needed */
+  object-fit: cover;
+}
+
+/* Styles specific to your component */
+/* your-component.component.css */
+
+/* Base styling for the card component */
+.card {
+  border: none; /* Remove card border for a cleaner look */
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+
+  /* Customize card shadow if needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for the card component */
+.card:hover {
+  transform: scale(1.02); /* Zoom in a bit on hover */
+}
+
+/* Image styling for the card */
+.card-img-top {
+  max-height: 300px; /* Set a maximum height for the image */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+/* Body of the card component */
+.card-body {
+  padding: 1rem; /* Add some padding to the card body */
+  background-color: #11022a; 
+}
+
+/* Title styling for the card */
+.card-title {
+  font-size: 1rem; /* Increase title font size */
+  margin-bottom: 0.5rem; /* Add some space below the title */
+  color: rgb(255, 255, 255);
+}
+
+/* Text styling for the card */
+.card-text {
+  color: #ffffff; /* Use a slightly muted color for additional text */
+  font-size: 0.9rem; /* Adjust text size */
+}
+
+/* Styling for the favorite button */
+.favorite-button {
+  color: rgb(0, 191, 255); /* Make the favorite button red */
+}
+
+/* Styling for the favorite icon within the button */
+.favorite-icon {
+  font-size: 1.5rem;
+  color: rgb(147, 6, 223);  /* Adjust icon size */
+  background-color: #11022a; 
+}
+.card .detail {
+  background-color: #8e16de; /* Green background color */
+  position: absolute; /* Position the button absolutely */
+  bottom: -25px; /* Align the button to the bottom of the card */
+  left: -8px; /* Align the button to the left of the card */
+  color: #fff; /* White text color */
+  border: none; /* Remove button border */
+  padding: 0px; /* Adjust padding for button size */
+  font-size: 1.5rem; /* Adjust font size if needed */
+  text-decoration: none; /* Remove underline for links */
+  display: block; /* Make the button a block-level element */
+  width: 100%; /* Take full width */
+  height: 10%;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+.card .detail:hover {
+  background-color: #00fbff; /* Darker green on hover */
+}

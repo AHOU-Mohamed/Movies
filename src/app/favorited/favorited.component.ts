@@ -31,19 +31,21 @@ export class FavoritedComponent implements OnInit {
   getAllFavoritesWithDetails() {
     this.filmservice.getAllFavorites().subscribe((data) => {
       this.favoritedMovies = data;
-      console.log("data", data);
-
+      console.log("All favorited movies:", this.favoritedMovies);
+  
       // Use forkJoin to parallelize requests
-      const requests = this.favoritedMovies
-        .filter((favoritedMovie) => favoritedMovie.idfilm) // Filter out items with missing or falsy idfilm
-        .map((favoritedMovie) =>
-          this.filmservice.getPopularMoviesById(favoritedMovie.idfilm)
-        );
-
+      const filteredMovies = this.favoritedMovies.filter((favoritedMovie) => favoritedMovie.idfilm);
+      console.log("Filtered favorited movies:", filteredMovies);
+  
+      const requests = filteredMovies.map((favoritedMovie) =>
+        this.filmservice.getPopularMoviesById(favoritedMovie.idfilm)
+      );
+  
       forkJoin(requests).subscribe((results) => {
         this.favoritedMovieDetailsList = results.filter((result) => !!result);
-        console.log("Favorited movie details:", results);
+        console.log("Favorited movie details:", this.favoritedMovieDetailsList);
       });
     });
   }
+  
 }

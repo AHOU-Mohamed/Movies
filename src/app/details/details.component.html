@@ -125,17 +125,17 @@
           <div class="">
             <h1 class="mb-3">Comments</h1>
             <ul class="list-group">
-              <li class="list-group-item" *ngFor="let comment of commentaireFiltred">
-                <div class="card mb-2">
+              <li class="list-group-item" *ngFor="let comment of comments">
+                <div class="card mb-2" *ngIf="comment.nom !== null && comment.comment !== null">
                   <div class="card-body">
                     <p class="card-text">
-                      <strong>Name:</strong> {{ comment.name }}
+                      <strong>Name:</strong> {{ comment.nom }}
                     </p>
-                    <div class="card-text" [innerHTML]="sanitizeHTML(comment.commentaire)"></div>
+                    <div class="card-text" [innerHTML]="sanitizeHTML(comment.comment)"></div>
                     <!-- Add a button to delete the message -->
-                    <button type="button" class="btn btn-danger" (click)="deleteComment(comment.id)">
+                    <!-- <button type="button" class="btn btn-danger" (click)="deleteComment(comment.id)">
                       Delete
-                    </button>
+                    </button> -->
                   </div>
                 </div>
               </li>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import {HomeComponent} from "./home/home.component";
+import {HomeComponent} from "./film-list/home.component";
 import {FilmService} from "../Service/film.service";
 import { RouterModule } from '@angular/router';
 @Component({

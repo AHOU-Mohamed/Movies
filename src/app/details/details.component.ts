@@ -8,6 +8,7 @@ import { Editor, NgxEditorModule, Validators } from 'ngx-editor';
 import {FormControl, FormGroup, FormsModule} from "@angular/forms";
 import {Commentaire} from "../../Model/Commentaire";
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { CommentForm } from '../../Model/commentForm';
 
 
 @Component({
@@ -23,25 +24,38 @@ export class DetailsComponent implements OnInit, OnDestroy {
 
   formData: { nom: string, comment: string } = { nom: '', comment: '' };
 
+  comments:CommentForm[]=[]
+  test!:CommentForm
+
   submit_commentaire(){
     const commentData = {
       idfilm: this.filmId,
       name: this.formData.nom,
-      commentaire: this.formData.comment
+      commentaire: this.formData.comment,
     };
+    this.test = {nom:this.formData.nom,comment:this.formData.comment}
     console.log(commentData)
     this.filmservice.addComment(commentData).subscribe(
       (response) => {
         // Handle success if needed
         console.log('Comment added successfully', response);
         // Refresh comment data after adding a new comment
-        this.getCommentaireFiltred(this.filmId);
+        this.getCommentaireFiltred();
+        console.log("comments from list ", this.comments.map(comment => comment.comment));
+
+      
+
       },
       (error) => {
         // Handle error if needed
         console.error('Error adding comment', error);
       }
     );
+
+  }
+  addList(){
+    this.comments.push(this.test)
+
   }
 
 
@@ -78,11 +92,14 @@ export class DetailsComponent implements OnInit, OnDestroy {
       this.commentaire=result
     })
   }
-  getCommentaireFiltred(idFilm:number){
-    console.log("now poe ",this.filmId);
-    this.filmservice.getCommentaireFiltred(idFilm).subscribe((result)=>{
-      this.commentaireFiltred=result
-    })
+  getCommentaireFiltred(){
+    // console.log("now poe ",this.filmId);
+    // this.filmservice.getCommentaireFiltred(idFilm).subscribe((result)=>{
+    //   this.commentaireFiltred=result
+    // })
+    if(this.test!=null){this.comments.push(this.test)}
+    
+
   }
   deleteComment(id: number) {
     this.filmservice.deleteComment(id).subscribe(
@@ -90,7 +107,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
         // Handle success if needed
         console.log('Comment deleted successfully', response);
         // Refresh comment data after adding a new comment
-        this.getCommentaireFiltred(this.filmId);
+        this.getCommentaireFiltred();
       },
       (error) => {
         // Handle error if needed
@@ -110,7 +127,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
       this.filmId=id;
 
       // Use the id as needed, for example, call your service method
-      this.getCommentaireFiltred(id);
+      this.getCommentaireFiltred();
 
     });
   }
